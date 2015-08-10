@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-analytics" version="1.3.2">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="com.analytics.google" version="1.2.3">
   <engines>
     <engine name="cordova" version=">=3.0.0" />
   </engines>
@@ -10,13 +10,13 @@
   <keywords>analytics,google,metrics,event,screen,ecommerce,ua,universal analytics,universal,referral,download,install,track,tracking</keywords>
   <repo>https://github.com/appfeel/analytics-google.git</repo>
   <issue>https://github.com/appfeel/analytics-google/issues</issue>
-  
-  <hook type="after_prepare" src="hooks/after_prepare/999-admobPluginNotice.js" />
-  
+
+  <!--hook type="after_prepare" src="hooks/after_prepare/999-admobPluginNotice.js" /-->
+
   <js-module src="www/analytics.js" name="GAPlugin">
     <merges target="analytics" />
   </js-module>
-  
+
 
   <platform name="android">
     <config-file target="res/xml/config.xml" parent="/*">
@@ -37,10 +37,10 @@
       </receiver>
     </config-file>
     <source-file src="src/android/CPGoogleAnalytics.java" target-dir="src/com/appfeel/cordova/analytics" />
-    <dependency id="cordova-google-play-services" />
+     <framework src="com.google.android.gms:play-services-analytics:7.5.0" />
   </platform>
-  
-  
+
+
 
   <platform name="ios">
     <config-file target="config.xml" parent="/*">
@@ -62,9 +62,9 @@
     <header-file src="src/ios/GAILogger.h" />
     <header-file src="src/ios/GAITrackedViewController.h" />
     <header-file src="src/ios/GAITracker.h" />
-    
+
     <source-file src="src/ios/libGoogleAnalyticsServices.a" framework="true" />
-    
+
     <framework src="SystemConfiguration.framework" />
     <framework src="CoreData.framework" />
     <framework src="libz.dylib" />

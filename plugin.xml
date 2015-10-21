@@ -28,16 +28,8 @@
       <uses-permission android:name="android.permission.INTERNET" />
       <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     </config-file>
-    <config-file target="AndroidManifest.xml" parent="/manifest/application">
-      <service android:name="com.google.analytics.tracking.android.CampaignTrackingService" />
-      <receiver android:name="com.google.analytics.tracking.android.CampaignTrackingReceiver" android:exported="true">
-        <intent-filter>
-          <action android:name="com.android.vending.INSTALL_REFERRER" />
-        </intent-filter>
-      </receiver>
-    </config-file>
     <source-file src="src/android/CPGoogleAnalytics.java" target-dir="src/com/appfeel/cordova/analytics" />
-     <framework src="com.google.android.gms:play-services-analytics:7.5.0" />
+     <framework src="com.google.android.gms:play-services-analytics:8.1.0" />
   </platform>
 
 

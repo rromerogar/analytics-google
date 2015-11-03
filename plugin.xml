@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="com.analytics.google" version="1.2.3">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-analytics" version="1.3.2">
   <engines>
     <engine name="cordova" version=">=3.0.0" />
   </engines>
@@ -10,9 +10,9 @@
   <keywords>analytics,google,metrics,event,screen,ecommerce,ua,universal analytics,universal,referral,download,install,track,tracking</keywords>
   <repo>https://github.com/appfeel/analytics-google.git</repo>
   <issue>https://github.com/appfeel/analytics-google/issues</issue>
-
-  <!--hook type="after_prepare" src="hooks/after_prepare/999-admobPluginNotice.js" /-->
-
+  
+  <hook type="after_prepare" src="hooks/after_prepare/999-admobPluginNotice.js" />
+  
   <js-module src="www/analytics.js" name="GAPlugin">
     <merges target="analytics" />
   </js-module>
